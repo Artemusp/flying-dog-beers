@@ -1,4 +1,4 @@
-#from datetime import datetime
+from datetime import datetime
 
 import dash
 import dash_core_components as dcc
@@ -22,7 +22,7 @@ app.layout = serve_layout
 
 @app.callback(Output("output", "children"), [Input("interval", "n_intervals")])
 def display_time(n):
-    return 123#datetime.now().strftime("The time is: %H:%M:%S")
+    return datetime.now().strftime("The time is: %H:%M:%S")
 
 
 if __name__ == "__main__":
