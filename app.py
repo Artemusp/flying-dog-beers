@@ -11,7 +11,7 @@ import flask
 from flask import  jsonify,abort
 import audiofile
 
-#user = audiofile.user
+user = audiofile.user
 app = flask.Flask(__name__)
 # RPS_DELAY = 0.34 # 1.5 ? audio.py vk_api
 @app.route('/')
@@ -19,21 +19,21 @@ def index():
     return 'Hello Flask app'
 
 
-# @server.route('/songs/<string:songName>', methods=['GET'])
-# def getSong(songName):
-#     songs = []
-#     #print("1")
-#     response = (user.searchSong(songName,10))
-#     #print(2)
-#     #print(response)
-#     #songs = response.first
-#     for j in response:
-#         #j["url"] = j["url"]#audiofile.codeSample(j["url"])
-#         #print(3)
-#         songs.append(j)
-#         # break
-#     #print(4)
-#     return jsonify(songs)
+@app.route('/songs/<string:songName>', methods=['GET'])
+def getSong(songName):
+    songs = []
+    #print("1")
+    response = (user.searchSong(songName,10))
+    #print(2)
+    #print(response)
+    #songs = response.first
+    for j in response:
+        #j["url"] = j["url"]#audiofile.codeSample(j["url"])
+        #print(3)
+        songs.append(j)
+        # break
+    #print(4)
+    return jsonify(songs)
 
 tasks = [
     {
