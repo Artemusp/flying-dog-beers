@@ -9,9 +9,9 @@ import flask
 #import dash
 #import dash_html_components as html
 from flask import  jsonify,abort
-import audiofile
+#import audiofile
 
-user = audiofile.user
+#user = audiofile.user
 app = flask.Flask(__name__)
 # RPS_DELAY = 0.34 # 1.5 ? audio.py vk_api
 @app.route('/')
