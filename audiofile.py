@@ -2,8 +2,7 @@
 import vk_api1 as vk_api
 from audio import VkAudio
 
-login = "89150028318"
-password = "python123sql"
+
 
 
 def resize_photo(name, n=1, save_name="ans"):
