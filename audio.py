@@ -19,7 +19,7 @@ from utils import set_cookies_from_list
 RE_ALBUM_ID = re.compile(r'act=audio_playlist(-?\d+)_(\d+)')
 RE_ACCESS_HASH = re.compile(r'access_hash=(\w+)')
 RE_M3U8_TO_MP3 = re.compile(r'/[0-9a-f]+(/audios)?/([0-9a-f]+)/index.m3u8')
-RPS_DELAY = 0.15 # 1.5 ?
+RPS_DELAY = 1.5 
 TRACKS_PER_USER_PAGE = 50
 TRACKS_PER_ALBUM_PAGE = 100
 ALBUMS_PER_USER_PAGE = 100
@@ -344,8 +344,8 @@ def scrap_data(html, user_id, filter_root_el=None, convert_m3u8_links=True, http
         # if convert_m3u8_links and 'm3u8' in link:
         #     link = RE_M3U8_TO_MP3.sub(r'\1/\2.mp3', link)
         #print('WU')
-        # if delay > 0:
-        #     time.sleep(delay)
+        if delay > 0:
+            time.sleep(delay)
         # tracks.append({
         #     'id': full_id[1],
         #     'owner_id': full_id[0],
