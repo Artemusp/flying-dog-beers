@@ -1,6 +1,5 @@
 bs4
 pytube3
-pytube
 request
 certifi==2018.4.16
 chardet==3.0.4
