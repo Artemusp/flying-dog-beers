@@ -9,7 +9,7 @@ import flask
 #import dash
 #import dash_html_components as html
 from flask import  jsonify,abort
-from pytube import YouTube
+#from pytube import YouTube
 
 # import audiofile
 
@@ -70,14 +70,14 @@ def get_task(task_id):
     return jsonify(task)
 
 
-@app.route('/yousongs/<string:task_id>', methods=['GET'])
-def get_song(task_id):
+# @app.route('/yousongs/<string:task_id>', methods=['GET'])
+# def get_song(task_id):
 
-    temp = "https://www.youtube.com/watch?v="
-    queue = temp + task_id
-    yt = YouTube(queue)
-    #print(yt.streams.filter(only_audio=True)[0].url)
-    return jsonify((yt.streams.filter(only_audio=True)[0].url))
+#     temp = "https://www.youtube.com/watch?v="
+#     queue = temp + task_id
+#     yt = YouTube(queue)
+#     #print(yt.streams.filter(only_audio=True)[0].url)
+#     return jsonify((yt.streams.filter(only_audio=True)[0].url))
 
 if __name__ == '__main__':
     app.run()
